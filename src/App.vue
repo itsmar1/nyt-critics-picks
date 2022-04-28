@@ -1,7 +1,8 @@
 <template>
   <the-header></the-header>
   <the-filters @fetch-movies="handleFilters" ></the-filters>
-  <movies-list :movies="moviesData" ></movies-list>
+  <LoadingSpinner v-if="loading" />
+  <movies-list v-else :movies="moviesData" ></movies-list>
 </template>
 
 <script>
@@ -10,6 +11,7 @@
 import TheHeader from './components/layout/TheHeader.vue'
 import TheFilters from './components/layout/TheFilters.vue'
 import MoviesList from './components/MoviesList.vue';
+import LoadingSpinner from './components/layout/LoadingSpinner.vue';
 import { API_KEY } from './config/constants';
 
 export default {
@@ -17,8 +19,9 @@ export default {
   components: {
     TheHeader,
     TheFilters,
-    MoviesList
-  },
+    MoviesList,
+    LoadingSpinner
+},
   data() {
     return {
       moviesData: [],
@@ -26,11 +29,15 @@ export default {
       loading: false,
       offsetNum: 0,
       movieOrder: "by-opening-date",
+      query: ""
     }
   },
   methods: {
     handleFilters(movieOrder, search) {
-      this.fetchMovies(this.offsetNum, movieOrder, search);
+      this.movieOrder = movieOrder;
+      this.query = search;
+      // this.fetchMovies(this.offsetNum, movieOrder, search);
+      this.fetchMovies(this.offsetNum, this.movieOrder, this.query);
     },
     async fetchMovies(offsetNum = 0, movieOrder = "by-opening-date", query = "") {
         this.error = null;
