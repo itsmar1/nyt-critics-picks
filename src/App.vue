@@ -1,6 +1,7 @@
 <template>
   <the-header></the-header>
   <the-filters @fetch-movies="handleFilters" ></the-filters>
+  <movies-list></movies-list>
 </template>
 
 <script>
@@ -8,13 +9,15 @@
 
 import TheHeader from './components/layout/TheHeader.vue'
 import TheFilters from './components/layout/TheFilters.vue'
+import MoviesList from './components/MoviesList.vue';
 import { API_KEY } from './config/constants';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
-    TheFilters
+    TheFilters,
+    MoviesList
   },
   data() {
     return {
