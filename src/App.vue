@@ -1,7 +1,7 @@
 <template>
   <the-header></the-header>
   <the-filters @fetch-movies="handleFilters" ></the-filters>
-  <movies-list></movies-list>
+  <movies-list :movies="moviesData" ></movies-list>
 </template>
 
 <script>

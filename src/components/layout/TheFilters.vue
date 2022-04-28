@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto">
+    <div class="container mx-auto mb-12">
         <div>
             <div class="flex justify-around">
                 <div class="flex items-center p-4 space-x-2">
