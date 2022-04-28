@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto mb-12">
+    <div class="container mx-auto mb-8">
         <div>
             <div class="flex justify-around">
                 <div class="flex items-center p-4 space-x-2">
@@ -46,8 +46,7 @@ export default {
             if (name === 'sortBy') {
                 this.movieOrder = value;
             }
-            console.log('Name: ', name);
-            console.log('Value: ', value);
+            
             this.$emit('fetch-movies', this.movieOrder, this.search);
         }
     }
