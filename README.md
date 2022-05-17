@@ -29,11 +29,11 @@ Open [http://localhost:8080](http://localhost:8080) with your browser to see the
 Using docker compose run `docker-compose up`
 
 ## Live Demo
-Click [HERE](https://github.com/itsmar1) for demo
+Click [HERE](https://nyt-critics-picks.netlify.app) for demo
 
 ## Author
 
-[**Marwan Ahal**](https://github.com/itsmar1)
+[**Marwan Ahal**](https://www.soymarwan.com)
 
 ## License
 
